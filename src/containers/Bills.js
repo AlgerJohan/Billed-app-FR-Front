@@ -23,19 +23,11 @@ export default class {
 
   handleClickIconEye = (icon) => {
     const billUrl = icon.getAttribute("data-bill-url");
-<<<<<<< HEAD
     const imgWidth = Math.floor($("#modaleFile").width() * 0.5);
     $("#modaleFile")
       .find(".modal-body")
       .html(
         `<div style='text-align: center;' class="bill-proof-container"><img width=${imgWidth} src=${billUrl} alt="Bill" /></div>`
-=======
-    // const imgWidth = Math.floor($("#modaleFile").width() * 0.5);
-    $("#modaleFile")
-      .find(".modal-body")
-      .html(
-        `<div style='text-align: center;' class="bill-proof-container"><img width=100% src=${billUrl} alt="Bill" /></div>`
->>>>>>> dev
       );
     $("#modaleFile").modal("show");
   };
@@ -46,7 +38,6 @@ export default class {
         .bills()
         .list()
         .then((snapshot) => {
-<<<<<<< HEAD
           const bills = snapshot.map((doc) => {
             try {
               return {
@@ -66,35 +57,6 @@ export default class {
             }
           });
           console.log("length", bills.length);
-=======
-          const bills = snapshot
-            .sort((a, b) => {
-              const dateA = new Date(a.date);
-              const dateB = new Date(b.date);
-              return dateA > dateB ? 1 : -1;
-            })
-            .map((doc) => {
-              try {
-                return {
-                  ...doc,
-                  date: formatDate(doc.date),
-                  status: formatStatus(doc.status),
-                };
-              } catch (e) {
-                // if for some reason, corrupted data was introduced, we manage here failing formatDate function
-                // log the error and return unformatted date in that case
-                const maDate = new Date();
-                maDate.toLocaleDateString("fr");
-                console.log(e, "for", doc);
-                return {
-                  ...doc,
-                  date: doc.date,
-                  status: formatStatus(doc.status),
-                };
-              }
-            });
-
->>>>>>> dev
           return bills;
         });
     }

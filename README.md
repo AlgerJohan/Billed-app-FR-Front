@@ -2,7 +2,7 @@
 
 Ce projet, dit frontend, est connecté à un service API backend que vous devez aussi lancer en local.
 
-Voici le lien vers la page web :  https://algerjohan.github.io/Billed-app-FR-Front/
+Voici le lien vers la page web :  https://johanlowenski.github.io/Billed-app-FR-Front/
 
 Le projet backend se trouve ici: https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-back
 
